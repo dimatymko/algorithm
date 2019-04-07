@@ -11,5 +11,7 @@ define('ROOT', dirname(__DIR__) . '/');
 
 require ROOT . 'vendor/autoload.php';
 
-$result['bogo_sort'] = Sort::bogo(Helper::randomArray(7));
+$result['bogo_sort'] = Sort::bogoSort(Helper::randomArray(7));
+$result['bubble_sort'] = Sort::bubbleSort(Helper::randomArray(1500));
+
 var_dump($result);
