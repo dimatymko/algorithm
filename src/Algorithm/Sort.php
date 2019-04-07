@@ -46,4 +46,28 @@ class Sort
         return $number;
     }
     
+    /**
+     * Insert sorting
+     *
+     * @param array $array the array to sort
+     * @return int number of comparisons
+     */
+    public static function insertSort(array $array): int
+    {
+        $number = 0;
+        $count  = count($array);
+        for ($j = 0; ($count - 1) > $j; $j++) {
+            $i = $j;
+            while ($i > (-1)) {
+                if ($array[$i] > $second = $array[$i + 1]) {
+                    $array[$i + 1] = $array[$i];
+                    $array[$i]     = $second;
+                    $number++;
+                }
+                $i--;
+            }
+        }
+        
+        return $number;
+    }
 }
