@@ -15,6 +15,6 @@ require ROOT . 'vendor/autoload.php';
 $result['bogo_sort']   = Sort::bogoSort(Helper::randomArray(7));
 $result['bubble_sort'] = Sort::bubbleSort(Helper::randomArray(7));
 $result['insert_sort'] = Sort::insertSort(Helper::randomArray(7));
-$result['binary_search'] = Search::binarySearch(Helper::sortArray(10), 1);
+$result['binary_search'] = Search::binarySearch(Helper::sortArray(10000), 8);
 
 var_dump($result);
