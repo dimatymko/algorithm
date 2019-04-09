@@ -12,9 +12,26 @@ define('ROOT', dirname(__DIR__) . '/');
 
 require ROOT . 'vendor/autoload.php';
 
-$result['bogo_sort']   = Sort::bogoSort(Helper::randomArray(7));
-$result['bubble_sort'] = Sort::bubbleSort(Helper::randomArray(7));
-$result['insert_sort'] = Sort::insertSort(Helper::randomArray(7));
-$result['binary_search'] = Search::binarySearch(Helper::sortArray(10000), 8);
+$graph ['friends'] = [
+    'you' => ['dima', 'yana', 'nikita', 'sasha'],
+    'dima' => ['you', 'fedy'],
+    'yana' => ['you', 'vika', 'kristina'],
+    'nikita' => ['you', 'any', 'sasha'],
+    'sasha' => ['you', 'nikita', 'koly'],
+    'fedy' => [],
+    'vika' => [],
+    'any' => [],
+    'kristina' => [],
+    'koly' => ['lol'],
+    'lol' => []
+];
+
+
+$result['bogo_sort']           = Sort::bogoSort(Helper::randomArray(7));
+$result['bubble_sort']         = Sort::bubbleSort(Helper::randomArray(7));
+$result['insert_sort']         = Sort::insertSort(Helper::randomArray(7));
+$result['binary_search']       = Search::binarySearch(Helper::sortArray(10000), 147);
+$result['breadth-firstSearch'] = Search::breadthFirstSearch($graph['friends'], 'you', 'lol');
 
 var_dump($result);
+
